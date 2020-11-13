@@ -10,6 +10,7 @@ const cors = require("cors");
 var indexRouter = require("./routes/index");
 var pokemonRouter = require("./routes/pokemon");
 const playerRouter = require("./routes/players");
+const authenticationRouter = require("./routes/authentication")
 
 var app = express();
 
@@ -24,5 +25,6 @@ app.use(express.static(path.join(__dirname, "public")));
 app.use("/", indexRouter);
 app.use("/pokemon", pokemonRouter);
 app.use("/players", playerRouter);
+app.use("/auth", authenticationRouter);
 
 module.exports = app;
